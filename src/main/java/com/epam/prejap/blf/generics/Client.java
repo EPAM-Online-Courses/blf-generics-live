@@ -15,7 +15,9 @@ class Client {
         this.address = address;
     }
 
-    public void receivePizza(Pizza pizza) {
-        System.out.println(pizza);
+    public void receive(Box box) {
+        System.out.println(box.open());
     }
+
+
 }

@@ -5,12 +5,23 @@ package com.epam.prejap.blf.generics;
  */
 class Restaurant {
     private String name;
+    private DeliverCompany deliverCompany;
 
-    public Restaurant(String name) {
+    public Restaurant(String name, DeliverCompany deliverCompany) {
         this.name = name;
+        this.deliverCompany = deliverCompany;
     }
 
-    public void makeOrder(String pizzaName, Client client) {
-        client.receivePizza(new Pizza(pizzaName));
+    public void makePizza(PizzaType pizzaType, Client client) {
+        Box box = new Box(new Pizza(pizzaType));
+        deliverCompany.deliver(box, client);
     }
+
+    public void makeBurger(BurgerType burgerType, Client client){
+        Box box = new Box(new Burger(burgerType));
+        deliverCompany.deliver(box, client);
+    }
+
+
+
 }

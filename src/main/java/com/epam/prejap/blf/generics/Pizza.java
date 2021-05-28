@@ -4,13 +4,13 @@ package com.epam.prejap.blf.generics;
  * @author dam
  */
 class Pizza {
-    private String pizzaName;
+    private PizzaType pizzaType;
 
-    public Pizza(String pizzaName) {
-
-        this.pizzaName = pizzaName;
+    public Pizza(PizzaType pizzaType) {
+        this.pizzaType = pizzaType;
     }
+    @Override
     public String toString(){
-        return this.pizzaName;
+        return this.pizzaType.toString();
     }
 }
